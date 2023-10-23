@@ -2,8 +2,8 @@ import {Link} from 'react-router-dom';
 
 const Menu = () => {
     return (<ul className="menu">
-        <li>Repertoire</li>
-        <li>My tickets</li>
+          <li><Link to="/repertoire">Repertoire</Link></li>
+        <li><Link to="/tickets">My tickets</Link></li>
         <li><Link to="/contact">Contact</Link></li>
     </ul>)
 }

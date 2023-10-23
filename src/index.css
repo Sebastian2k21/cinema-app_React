@@ -48,9 +48,67 @@ nav {
   scale: 1.1;
 }
 
+.menu a {
+  text-decoration: none;
+  color: var(--font-color);
+
+}
+
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 15px;
+}
+
+.custom-button {
+  cursor: pointer;
+  border: 1px solid var(--secondary--color);
+  border-radius: 10px;
+  padding: 10px;
+  color: var(--font-color);
+  background-color: var(--primary-color);
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.custom-button:hover {
+  background-color: var(--background-color);
+  scale: 1.1;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary--color);
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+.movie-container:hover {
+  background-color: var(--tertiary-color);
+  scale: 1.01;
+}
+
+.movie-container h3 {
+  text-align: center;
+}
+
+.movie-container img {
+  border-radius: 5px;
+}
+
+.content {
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
