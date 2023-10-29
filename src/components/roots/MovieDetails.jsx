@@ -1,6 +1,7 @@
 import {useParams} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 
+
 const MovieDetails = () => {
     const [movie, setMovie] = useState({title: ""});
     const id = useParams().id;
@@ -15,10 +16,11 @@ const MovieDetails = () => {
         getMovie();
      }, []);
 
-    return (<div>
-        {movie != null ? <div>
-            <h1>{movie.title}</h1>
-            </div> : null }
+   return (
+   <div className='DetailsStyle'>
+       <h1>{movie.title}</h1>
+       <img  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+       <p>{movie.overview}</p>
 
     </div>)
 }
