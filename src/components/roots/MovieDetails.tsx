@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 
 
 const MovieDetails = () => {
-    const [movie, setMovie] = useState({title: ""});
+const [movie, setMovie] = useState({title: "", overview: "", poster_path: ""});
     const id = useParams().id;
 
     const getMovie = async () => {

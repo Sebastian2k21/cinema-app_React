@@ -1,14 +1,62 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { getUser } from '../../services/UserServices';
+import {toast} from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../common/UserContext';
 
 
 const Login: React.FC = () => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const userContext = useContext(UserContext);
+    const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Tu dodaj logikę logowania, np. wysyłanie danych do serwera
-        console.log(`Próba logowania z nazwą użytkownika: ${username} i hasłem: ${password}`);
+
+        const user = getUser(username);
+        if(user == null) {
+            console.error('Błąd logowania. Nieprawidłowa nazwa użytkownika lub hasło.');
+            toast(`Błąd logowania. Nieprawidłowa nazwa użytkownika lub hasło.`,
+            {
+                icon: '😪',
+                style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+                },
+            });
+            return;
+        }
+    
+        const savedPassword = user.password;
+    
+        if (savedPassword && savedPassword === password) {
+            console.log('Logowanie zakończone sukcesem!');
+            toast(`Sukces! Zalogowano jako ${username}`,
+            {
+                icon: '😪',
+                style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+                },
+            });
+            navigate('/tickets')
+            userContext.setUser(username);
+        } else {
+            toast(`Błąd logowania. Nieprawidłowa nazwa użytkownika lub hasło.`,
+            {
+                icon: '😪',
+                style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+                },
+            });
+            console.error('Błąd logowania. Nieprawidłowa nazwa użytkownika lub hasło.');
+        }
     }
 
     return (
@@ -33,7 +81,9 @@ const Login: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Zaloguj się</button>
+        <Link to="/register">Nie masz konta? Zarejestruj się!</Link>
     </form>
+    
 </div>
 
     );

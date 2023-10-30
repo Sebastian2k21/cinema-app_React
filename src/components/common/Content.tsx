@@ -4,6 +4,10 @@ import MyTickets from "../roots/MyTickets";
 import Repertoire from "../roots/Repertoire";
 import MovieDetails from "../roots/MovieDetails";
 import Login from "../roots/Login";
+import Register from "../roots/Register";
+import Logout from "../roots/Logout";
+import NotFound from "../roots/NotFound";
+
 
 const Content = () => {
     return (<div className="content">
@@ -14,7 +18,9 @@ const Content = () => {
             <Route path="/contact" element={<Contact/>}/>
             <Route path="/movie/:id" element={<MovieDetails/>}/>
             <Route path="/login" element={<Login/>}/>
-            
+            <Route path="/register" element={<Register/>}/>
+            <Route path="/logout" element={<Logout/>}/>
+            <Route path="*" element={<NotFound/>}/>
         </Routes>
         
     </div>)
