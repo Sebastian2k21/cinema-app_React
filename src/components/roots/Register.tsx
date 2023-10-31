@@ -60,32 +60,45 @@ const Register: React.FC = () => {
 
     return (
         <div className="register-container">
-            <form onSubmit={handleSubmit} className="register-form">
-                <h1>Rejestracja</h1>
-                <label htmlFor="username">Nazwa użytkownika:</label>
+        <form onSubmit={handleSubmit} className="register-form">
+            <h1>Rejestracja</h1>
+    
+            <div className="input-group">
                 <input
                     type="text"
                     id="username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
+                    placeholder=" "
                 />
-                <label htmlFor="password">Hasło:</label>
+                <label htmlFor="username">Nazwa użytkownika:</label>
+            </div>
+    
+            <div className="input-group">
                 <input
                     type="password"
                     id="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    placeholder=" "
                 />
-                <label htmlFor="confirmPassword">Potwierdź hasło:</label>
+                <label htmlFor="password">Hasło:</label>
+            </div>
+    
+            <div className="input-group">
                 <input
                     type="password"
                     id="confirmPassword"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder=" "
                 />
-                <button type="submit">Zarejestruj się</button>
-            </form>
-        </div>
+                <label htmlFor="confirmPassword">Potwierdź hasło:</label>
+            </div>
+    
+            <button type="submit">Zarejestruj się</button>
+        </form>
+    </div>
     );
 }
 
