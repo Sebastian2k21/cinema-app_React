@@ -16,6 +16,7 @@ body {
 
   background-color: var(--background-color);
   color: var(--font-color);
+  
 }
 
 code {
@@ -33,6 +34,7 @@ nav {
 .menu {
   display: flex;
   list-style: none;
+  outline: none;
 }
 
 .menu li {
@@ -71,11 +73,14 @@ nav {
   transition: all 0.3s ease-in-out;
   font-weight: bold;
   letter-spacing: 2px;
+  outline: none;
+
 }
 
 .custom-button:hover {
   background-color: var(--background-color);
   scale: 1.1;
+  outline: none;
 }
 
 .grid {
@@ -97,6 +102,7 @@ nav {
 .movie-container:hover {
   background-color: var(--tertiary-color);
   scale: 1.01;
+  outline: none;
 }
 
 .movie-container h3 {
@@ -116,27 +122,25 @@ nav {
 /* Contact.css */
 
 .contact {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
+  width: 100vw; 
+  height: 100vh; 
+  margin: 0;
+  padding: 0;
 
 }
 
 .contact h1 {
   font-size: 54px;
   color:rgba(0, 153, 255, 0.768);
-  margin-bottom: 10px;
+  margin-bottom: 10px; 
+  text-align: center;
 }
 
 .contact p {
   font-size: 16px;
-  color: #555;
-  margin-bottom: 20px;
+  color:white;
+  margin-bottom: 20px; 
+  text-align: center;
 }
 
 .contact address {
@@ -152,6 +156,10 @@ nav {
 
 .contact a:hover {
   color: #0056b3;
+}
+.contact strong {
+  font-weight: bold;
+  text-align: center;
 }
 
 .DetailsStyle h1
@@ -254,7 +262,7 @@ label
 .login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #f68e44;
+  color: var(--primary-color);
   font-size: 12px;
 }
 
@@ -273,13 +281,10 @@ label
 }
 
 .login-box a:hover {
-  background: #f49803;
+  background: var(--secondary--color);
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #f4c803,
-              0 0 25px #bd9d0b,
-              0 0 50px #f4e403,
-              0 0 100px #d5cf1e;
+ 
 }
 
 .login-box a span {
@@ -457,17 +462,20 @@ label
   transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
   outline: none;
+ 
   
 }
 
  button:hover {
   background-color: #4a8dd8;
   transform: scale(1.05);
+  outline: none;
 }
 
 button:active {
   background-color: #3e7cb6;
   transform: scale(0.95);
+  outline: none;
 }
 
 .username
@@ -488,6 +496,21 @@ footer {
   text-align: center;
   color: wheat;
 
-
 }
 
+footer
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.movie-button-link {
+  text-decoration: none;
+}
+
+.row-item {
+  display: flex;
+  gap: 5px
+}

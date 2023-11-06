@@ -44,6 +44,7 @@ const Login: React.FC = () => {
                 },
             });
             navigate('/tickets')
+            localStorage.setItem('username', username);
             userContext.setUser(username);
         } else {
             toast(`Błąd logowania. Nieprawidłowa nazwa użytkownika lub hasło.`,

@@ -1,7 +1,4 @@
 const MyTickets = () => {
-    return (<div>
-        MyTickets
-    </div>)
-}
-
+  return <div>My Tickets</div>;
+};
 export default MyTickets;

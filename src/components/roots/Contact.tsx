@@ -10,11 +10,14 @@ const Contact: React.FC = () => {
                 Jeśli masz jakieś pytania lub sugestie, skontaktuj się z nami za pomocą poniższych danych:
             </p>
             <address>
-                <strong>Kino Filmowe</strong><br />
+                
+                <p><strong>Kino Filmowe</strong><br />
                 Ulica Filmowa 123<br />
                 20-123 Wrocławek<br />
+                
                 <a href="mailto:kontakt@kinofilmowe.pl">kontakt@kinofilmowe.pl</a><br />
                 Tel: +48 123 456 789
+                </p>
             </address>
         </div>
     );
