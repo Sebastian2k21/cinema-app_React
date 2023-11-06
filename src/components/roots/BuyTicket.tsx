@@ -59,52 +59,79 @@ const BuyTicket = () => {
         setSelectedSeats(selectedSeats);
      }
 
-    return (<div className="">
+    return (<div className="form_buy">
         <h1>Buy tickets for {movie.title}</h1>
         <img width={"300px"} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
         <form onSubmit={handleBuyTicket}>
+
+
             <div>
-            <input type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/>
+            <input  type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/>
 
             </div>
             <div>
-            <input type="text" placeholder="Surname" value={surname} onChange={e => setSurname(e.target.value)}/>
+            <input  type="text" placeholder="Surname" value={surname} onChange={e => setSurname(e.target.value)}/>
 
             </div>
             <div>
-            <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+            <input  type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
 
-            </div>
+        
 
             <div>
+               
                 <input type="date" placeholder="Email" value={date} onChange={e => setDate(e.target.value)} />
+                </div>
+                <div className="time_form">
+                
                 <Select values={movieTimes} onChange={(e:any)  => setTime(e.target.value)} />
+                </div>
             </div>
+            
             <div>
-                <label>Count</label>
-                <Select values={ticketCounts} onChange={(e:any)  => setCount(e.target.value)} />
+            <div className="count_ticket">
+                <h1>Count</h1>
+                
+                
+                <Select  values={ticketCounts} onChange={(e:any)  => setCount(e.target.value)} />
+                </div>
             </div>
 
-            <ul>
-            {selectedCounts.map((ticker_number) => 
-            <li>
-                <p>Ticket number {ticker_number}</p>
-                <div>
-                    <label>Row</label>
-                    <Select values={rows} onChange={(e:any) => setTicketRow(ticker_number, e.target.value)} />
-                </div>
-                <div>
-                    <label>Seat</label>
-                    <Select values={seats} onChange={(e:any) => setTicketSeat(ticker_number, e.target.value)} />
-                </div>
-            </li>
-            )}
-            </ul>
-           
+            <div className="tickets-table-container">
+    <table className="tickets-table">
+      <thead>
+        <tr>
+          <th>Ticket Number</th>
+          <th>Row</th>
+          <th>Seat</th>
+        </tr>
+      </thead>
+      <tbody>
+        {selectedCounts.map((ticker_number) => (
+          <tr key={ticker_number}>
+            <td className="ticket-number-cell">Ticket number {ticker_number}</td>
+            <td>
+              <Select
+                values={rows}
+                onChange={(e:any) => setTicketRow(ticker_number, e.target.value)}
+              />
+            </td>
+            <td>
+              <Select
+                values={seats}
+                onChange={(e:any) => setTicketSeat(ticker_number, e.target.value)}
+              />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 
-            <button type="submit">Buy</button>
-        </form>
-    </div>);
-}
+</form>
+</div>
+);
+};
+
 
 export default BuyTicket;
