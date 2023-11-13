@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Select from "../common/Select";
+import { addTicket } from "../../services/TicketService";
+import { useContext } from "react";
+import { UserContext } from "../common/UserContext";
+import toast from "react-hot-toast";
 
 
 const BuyTicket = () => { 
@@ -11,6 +15,9 @@ const BuyTicket = () => {
         }
         return list
     }
+
+    const navigate = useNavigate();
+    const { user } = useContext(UserContext);
 
     const movieTimes = ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
     const ticketCounts = rangeList(9)
@@ -46,7 +53,20 @@ const BuyTicket = () => {
 
      const handleBuyTicket = (e: any) => {
         e.preventDefault();
-        
+        addTicket(user as string, {
+          movie_id: id as string, 
+          name: name, 
+          surname: surname, 
+          email: email, 
+          date: date, 
+          time: time, 
+          movie_name: movie.title,
+          tickets: {
+            selectedRows: selectedRows,
+            selectedSeats: selectedSeats
+          }})
+          toast.success("Ticket bought successfully");
+          navigate('/tickets')
      }
 
      const setTicketRow = (ticket_number: number, row: number) => {
@@ -112,12 +132,14 @@ const BuyTicket = () => {
             <td className="ticket-number-cell">Ticket number {ticker_number}</td>
             <td>
               <Select
+                key={ticker_number}
                 values={rows}
                 onChange={(e:any) => setTicketRow(ticker_number, e.target.value)}
               />
             </td>
             <td>
               <Select
+              key={ticker_number}
                 values={seats}
                 onChange={(e:any) => setTicketSeat(ticker_number, e.target.value)}
               />
@@ -126,6 +148,7 @@ const BuyTicket = () => {
         ))}
       </tbody>
     </table>
+    <button type="submit">Buy</button>
   </div>
 
 </form>
