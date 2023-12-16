@@ -1,0 +1,41 @@
+.contact {
+    width: 100vw; 
+    height: 100vh; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  .contact h1 {
+    font-size: 54px;
+    color:rgba(0, 153, 255, 0.768);
+    margin-bottom: 10px; 
+    text-align: center;
+  }
+  
+  .contact p {
+    font-size: 16px;
+    color:white;
+    margin-bottom: 20px; 
+    text-align: center;
+  }
+  
+  .contact address {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .contact a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .contact a:hover {
+    color: #0056b3;
+  }
+  
+  .contact strong {
+    font-weight: bold;
+    text-align: center;
+  }
+  

@@ -10,10 +10,10 @@ const Login: React.FC = () => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const userContext = useContext(UserContext);
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // element z react-router-dom, który pozwala na nawigację wewnątrz aplikacji na podstawie routes zdefiniowanych w komponencie content
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
+    const handleSubmit = (e: React.FormEvent) => { // React.FormEvent - interfejs, który reprezentuje zdarzenie formularza
+        e.preventDefault();//zapobiega odswiezeniu strony w momencie wyslania formularza
 
         const user = getUser(username);
         if(user == null) {

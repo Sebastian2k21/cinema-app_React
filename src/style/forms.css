@@ -1,0 +1,52 @@
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* ... Other .login-box styles ... */
+  
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+  }
+  
+  .register-form {
+    width: 300px;
+    padding: 40px;
+    position: relative;
+    background:rgba(0,0,0,.5);
+    text-align: center;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  
+  .register-form h1 {
+    margin: 0 0 20px;
+    font-weight: 400;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  /* ... Other .register-form and .input-group styles ... */
+  

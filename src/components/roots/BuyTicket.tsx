@@ -7,6 +7,7 @@ import { UserContext } from "../common/UserContext";
 import toast from "react-hot-toast";
 
 
+
 const BuyTicket = () => { 
     const rangeList = (end: number, start=1 ) => {
         const list = [];

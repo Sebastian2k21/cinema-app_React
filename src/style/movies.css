@@ -1,0 +1,39 @@
+.grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .movie-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary--color);
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .movie-container:hover {
+    background-color: var(--tertiary-color);
+    scale: 1.01;
+    outline: none;
+  }
+  
+  .movie-container h3 {
+    text-align: center;
+  }
+  
+  .movie-container img {
+    border-radius: 5px;
+  }
+  
+  .movie-button-link {
+    text-decoration: none;
+  }
+  
+  .row-item {
+    display: flex;
+    gap: 5px
+  }
+  

@@ -1,0 +1,14 @@
+footer {
+    padding: 20px 0;
+    background-color: var(--primary-color);
+    border-top: 2px solid var(--secondary--color);
+    text-align: center;
+    color: wheat;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

@@ -1,0 +1,46 @@
+.custom-button {
+    cursor: pointer;
+    border: 1px solid var(--secondary--color);
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--font-color);
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    letter-spacing: 2px;
+    outline: none;
+  }
+  
+  .custom-button:hover {
+    background-color: var(--background-color);
+    scale: 1.1;
+    outline: none;
+  }
+  
+  button {
+    display: block;
+    padding: 12px 20px;
+    background-color: #5fbae9;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  button:hover {
+    background-color: #4a8dd8;
+    transform: scale(1.05);
+    outline: none;
+  }
+  
+  button:active {
+    background-color: #3e7cb6;
+    transform: scale(0.95);
+    outline: none;
+  }
+  
