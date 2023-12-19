@@ -26,8 +26,8 @@ const MovieDetails = () => {
         const imgData = await imgResponse.json();
         let posters = imgData["posters"]
 
-        if(posters.length > 5) {
-            posters = posters.slice(0, 5)
+        if(posters.length > 4) {
+            posters = posters.slice(0, 4)
             console.log("OK")
         }
         setPosters(posters)
@@ -53,15 +53,15 @@ const MovieDetails = () => {
        <img className='DetailsStyleImg'  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
        <p>{movie.overview}</p>
 
-        <h3>Comments</h3>
+        <h3 className='commentsMovie'>Comments</h3>
         <div>
             {comments.map(comment => <p>
-                <div>{comment.email}</div>
+                <div className='emailComments'>{comment.email}</div>
                 <div>{comment.body}</div>
             </p>)}
         </div>
         
-        <h3>Posters</h3>
+        <h3 className='posterMovie'>Posters</h3>
         <div className="poster-grid">
             {posters.map(pos => (
                     <img className="poster" src={poster_path + pos.file_path} alt="poster" />

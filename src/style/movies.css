@@ -37,3 +37,16 @@
     gap: 5px
   }
   
+  .commentsMovie
+  {
+    text-align: center;
+    color:var(--secondary--color);
+    font-size:28px;
+  }
+
+  .posterMovie
+  {
+    text-align: center;
+    color:var(--secondary--color);
+    font-size: 28px;
+  }
